@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Hover Effect</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f5f5f5;
+      margin: 0;
+    }
+    .description {
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .image-container {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .image-container img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.5s ease-in-out;
+      display: block;
+    }
+    .image-container .hover-image {
+      opacity: 0;
+    }
+    .hand-spot {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background-color: rgba(255, 0, 0, 0.2);
+      cursor: pointer;
+      z-index: 10;
+    }
+    .hand-spot-1 {
+      top: 50%;
+      left: 65%;
+    }
+    .hand-spot-2 {
+      top: 30%;
+      left: 20%;
+    }
+    .hand-spot-1:hover ~ .hover-image-1 {
+      opacity: 1;
+    }
+    .hand-spot-1:hover ~ .default-image {
+      opacity: 0;
+    }
+    .hand-spot-2:hover ~ .hover-image-2 {
+      opacity: 1;
+    }
+    .hand-spot-2:hover ~ .default-image {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="description">Happy 4 months Baby</div>
+  <div class="description">You need to click on two red squares to fulfill my demands</div>
+  <div class="image-container">
+    <div class="hand-spot hand-spot-1"></div>
+    <div class="hand-spot hand-spot-2"></div>
+    <img src="us.jpeg" alt="Person 1" class="default-image">
+    <img src="1q.png" alt="Person 2" class="hover-image hover-image-1">
+    <img src="2q.png" alt="Person 3" class="hover-image hover-image-2">
+  </div>
+</body>
+</html>
